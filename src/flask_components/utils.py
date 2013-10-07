@@ -8,7 +8,7 @@ __all__ = [
 ]
 
 
-def find(name, app=None, components=None):
+def find(name, app=None, components=None, raw=False):
     """
     Discover any named attributes, modules, or packages and coalesces the
     results.
@@ -22,6 +22,9 @@ def find(name, app=None, components=None):
     @param[in] components
         An array of components; overrides any setting in the application
         config.
+
+    @param[in] raw
+        If True then no processing is done on the found items.
     """
 
     if components is None:
@@ -47,13 +50,14 @@ def find(name, app=None, components=None):
                 # Assume this component has nothing under the specified name.
                 continue
 
-        if isinstance(item, types.ModuleType):
-            all_ = getattr(item, '__all__', None)
-            if all_:
-                item = {n: getattr(item, n) for n in all_}
+        if not raw:
+            if isinstance(item, types.ModuleType):
+                all_ = getattr(item, '__all__', None)
+                if all_:
+                    item = {n: getattr(item, n) for n in all_}
 
-            else:
-                item = vars(item)
+                else:
+                    item = vars(item)
 
         items.append(item)
 

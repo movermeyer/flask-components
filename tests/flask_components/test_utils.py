@@ -43,3 +43,10 @@ class TestFind:
         items = components.find('foo', components=['flask_components'])
 
         assert len(items) == 0
+
+    def test_find_raw(self):
+        items = components.find(
+            'utils', components=['jinja2', 'flask.ext.components'], raw=True)
+
+        assert len(items) == 2
+        assert hasattr(items[1], 'find')
