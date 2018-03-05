@@ -1,8 +1,8 @@
 # flask-components
 [![Build Status](https://travis-ci.org/concordusapps/flask-components.png?branch=master)](https://travis-ci.org/concordusapps/flask-components)
 [![Coverage Status](https://coveralls.io/repos/concordusapps/flask-components/badge.png?branch=master)](https://coveralls.io/r/concordusapps/flask-components?branch=master)
-[![PyPi Version](https://pypip.in/v/Flask-Components/badge.png)](https://pypi.python.org/pypi/Flask-Components)
-![PyPi Downloads](https://pypip.in/d/Flask-Components/badge.png)
+[![PyPi Version](https://img.shields.io/pypi/v/Flask-Components.svg)](https://pypi.python.org/pypi/Flask-Components)
+![PyPi Downloads](https://img.shields.io/pypi/dm/Flask-Components.svg)
 > A simple flask extension to discover files in a declared array of components.
 
 ## License
